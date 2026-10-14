@@ -12,37 +12,47 @@ body {
     line-height: 1.6;
 }
 
-/* Centered Navigation (No Logo) */
+/* Header & Centered Navigation matching the original */
 .site-header {
-    background-color: #161616;
-    border-bottom: 1px solid #333;
-    padding: 1rem 2rem;
+    background-color: #0f0f0f;
+    border-bottom: 1px solid #222;
+    padding: 1.5rem 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
+    text-align: center;
+}
+
+.site-logo {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .nav-container {
-    display: flex;
-    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
-.center-nav {
-    justify-content: center !important;
-}
-
-.center-nav .nav-links a {
-    margin: 0 1.25rem;
-    font-size: 1rem;
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .nav-links a {
     color: #cccccc;
     text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
     font-weight: 500;
     transition: color 0.2s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -51,23 +61,23 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 70vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     padding: 0 1rem;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: #aaaaaa;
     margin-bottom: 1.5rem;
 }
@@ -87,16 +97,15 @@ body {
     background-color: #cccccc;
 }
 
-/* Interactive Photo Carousel */
+/* Scaled Photo Carousel */
 .photo-browser {
-    background-color: #161616;
-    padding: 3rem 0;
-    border-bottom: 1px solid #333;
-    border-top: 1px solid #333;
+    background-color: #000000;
+    padding: 0;
+    border-bottom: 1px solid #222;
 }
 
 .carousel-container {
-    max-width: 580px;
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -106,9 +115,7 @@ body {
 .carousel-track-wrapper {
     overflow: hidden;
     width: 100%;
-    border-radius: 6px;
-    background-color: #111;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    background-color: #000;
 }
 
 .carousel-track {
@@ -122,44 +129,40 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
 }
 
 .carousel-slide img {
-    max-width: 450px; /* Forces the image to stay compact and neat */
     width: 100%;
-    max-height: 350px;
-    object-fit: contain;
+    max-height: 70vh;
+    object-fit: cover; /* Fills nicely across the screen like your screenshot */
     display: block;
-    margin: 0 auto;
-    background-color: #111;
 }
 
-/* Carousel Arrow Buttons */
+/* Overlay Arrow Buttons */
 .carousel-btn {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #ffffff;
-    border: 1px solid #444;
-    font-size: 1.5rem;
+    border: none;
+    font-size: 2rem;
     cursor: pointer;
-    padding: 1rem 0.75rem;
+    padding: 1rem 0.5rem;
     z-index: 10;
     position: absolute;
-    border-radius: 4px;
-    transition: background 0.2s, border-color 0.2s;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.2s;
 }
 
 .carousel-btn:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #666;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .prev-btn {
-    left: -60px;
+    left: 10px;
 }
 
 .next-btn {
-    right: -60px;
+    right: 10px;
 }
 
 /* General Sections */
@@ -185,4 +188,16 @@ footer {
     color: #666666;
     font-size: 0.9rem;
     background-color: #0b0b0b;
+}
+
+/* Mobile Responsiveness for Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 0.75rem 1rem;
+        padding: 0 0.5rem;
+    }
+    .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
 }
