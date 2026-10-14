@@ -96,7 +96,7 @@ body {
 }
 
 .carousel-container {
-    max-width: 580px; /* Constrains the overall width of the photo window */
+    max-width: 580px;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -122,13 +122,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .carousel-slide img {
+    max-width: 450px; /* Forces the image to stay compact and neat */
     width: 100%;
-    max-height: 400px;
+    max-height: 350px;
     object-fit: contain;
     display: block;
+    margin: 0 auto;
     background-color: #111;
 }
 
