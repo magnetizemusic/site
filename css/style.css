@@ -263,15 +263,15 @@ body {
 }
 
 .social-bar a {
-    color: #ffffff !important; /* Forces pure white, overriding default link colors */
-    font-size: 1.6rem;         /* Increased size for better visibility */
+    color: #ffffff !important;
+    font-size: 1.6rem;
     text-decoration: none;
     transition: color 0.2s, transform 0.2s;
 }
 
 .social-bar a:hover {
     color: #aaaaaa !important;
-    transform: scale(1.1);     /* Subtle zoom effect on hover */
+    transform: scale(1.1);
 }
 
 /* General Sections */
