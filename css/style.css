@@ -183,7 +183,7 @@ body {
 /* Photo Carousel */
 .photo-browser {
     background-color: #000000;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid #222;
 }
 
@@ -257,18 +257,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
+    text-align: center;
 }
 
 .social-bar a {
-    color: #ffffff;
-    font-size: 1.35rem;
-    transition: color 0.2s;
+    color: #ffffff !important; /* Forces pure white, overriding default link colors */
+    font-size: 1.6rem;         /* Increased size for better visibility */
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
 }
 
 .social-bar a:hover {
-    color: #aaaaaa;
+    color: #aaaaaa !important;
+    transform: scale(1.1);     /* Subtle zoom effect on hover */
 }
 
 /* General Sections */
@@ -313,6 +316,10 @@ footer {
     }
 
     .social-bar {
-        gap: 1.5rem;
+        gap: 1.75rem;
+    }
+
+    .social-bar a {
+        font-size: 1.5rem;
     }
 }
