@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Centered Navigation matching the original */
+/* Header & Centered Navigation */
 .site-header {
     background-color: #0f0f0f;
     border-bottom: 1px solid #222;
@@ -97,25 +97,27 @@ body {
     background-color: #cccccc;
 }
 
-/* Scaled Photo Carousel */
+/* Photo Carousel */
 .photo-browser {
     background-color: #000000;
-    padding: 0;
+    padding: 2rem 0;
     border-bottom: 1px solid #222;
 }
 
 .carousel-container {
-    max-width: 100%;
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
     display: flex;
     align-items: center;
+    padding: 0 1rem;
 }
 
 .carousel-track-wrapper {
     overflow: hidden;
     width: 100%;
     background-color: #000;
+    border-radius: 6px;
 }
 
 .carousel-track {
@@ -133,36 +135,38 @@ body {
 
 .carousel-slide img {
     width: 100%;
-    max-height: 70vh;
-    object-fit: cover; /* Fills nicely across the screen like your screenshot */
+    max-height: 500px;
+    object-fit: contain; /* Keeps the whole photo visible without cutting off heads */
     display: block;
+    background-color: #000;
 }
 
 /* Overlay Arrow Buttons */
 .carousel-btn {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    padding: 1rem 0.5rem;
+    padding: 0.75rem 0.5rem;
     z-index: 10;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 4px;
     transition: background 0.2s;
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev-btn {
-    left: 10px;
+    left: 20px;
 }
 
 .next-btn {
-    right: 10px;
+    right: 20px;
 }
 
 /* General Sections */
@@ -190,14 +194,50 @@ footer {
     background-color: #0b0b0b;
 }
 
-/* Mobile Responsiveness for Navigation */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .nav-links {
-        gap: 0.75rem 1rem;
-        padding: 0 0.5rem;
+    .site-header {
+        padding: 1rem 0.5rem;
     }
+    
+    .site-logo {
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Turns the menu into a clean, smooth scrolling horizontal bar on phones */
+    .nav-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 1.25rem;
+        padding: 0 1rem;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Hides scrollbar for clean look */
+    }
+
     .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+    .carousel-btn {
+        padding: 0.5rem 0.35rem;
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: 15px;
+    }
+
+    .next-btn {
+        right: 15px;
     }
 }
