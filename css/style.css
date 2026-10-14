@@ -1,52 +1,48 @@
-/* Base Reset & Styling */
-body {
-    font-family: 'Inter', sans-serif;
+/* Global Reset & Base Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
     line-height: 1.6;
 }
 
-a {
-    color: #4da6ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Header & Navigation */
+/* Centered Navigation (No Logo) */
 .site-header {
-    background-color: #1a1a1a;
+    background-color: #161616;
     border-bottom: 1px solid #333;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo {
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: #ffffff;
-    letter-spacing: 1px;
+.center-nav {
+    justify-content: center !important;
+}
+
+.center-nav .nav-links a {
+    margin: 0 1.25rem;
+    font-size: 1rem;
 }
 
 .nav-links a {
-    margin-left: 1.5rem;
-    color: #b3b3b3;
-    font-size: 0.9rem;
-    font-weight: 600;
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover {
@@ -60,46 +56,107 @@ a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #222;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     padding: 0 1rem;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
+.hero-content h1 {
+    font-size: 3.5rem;
     letter-spacing: 2px;
+    margin-bottom: 0.5rem;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    color: #b3b3b3;
+.hero-content p {
+    font-size: 1.25rem;
+    color: #aaaaaa;
     margin-bottom: 1.5rem;
 }
 
 .btn {
     display: inline-block;
     background-color: #ffffff;
-    color: #121212;
-    padding: 0.75rem 1.5rem;
+    color: #0f0f0f;
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
     font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #cccccc;
+}
+
+/* Larger Interactive Photo Carousel */
+.photo-browser {
+    background-color: #161616;
+    padding: 3rem 0;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+}
+
+.carousel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Carousel Arrow Buttons */
+.carousel-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid #444;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1rem 0.75rem;
+    z-index: 10;
+    position: absolute;
     border-radius: 4px;
     transition: background 0.2s;
 }
 
-.btn:hover {
-    background-color: #e0e0e0;
-    text-decoration: none;
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Sections */
+.prev-btn {
+    left: -50px;
+}
+
+.next-btn {
+    right: -50px;
+}
+
+/* General Sections */
 .section {
     padding: 5rem 2rem;
-}
-
-.alt-bg {
-    background-color: #181818;
+    border-bottom: 1px solid #222;
 }
 
 .container {
@@ -107,111 +164,16 @@ a:hover {
     margin: 0 auto;
 }
 
-h2 {
+.section h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #ffffff;
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
-}
-
-/* Grid & Cards */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    background-color: #222;
-    border: 1px solid #333;
-    border-radius: 6px;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
     margin-bottom: 1rem;
 }
 
-.card h3 {
-    margin: 0.5rem 0;
-    color: #ffffff;
-}
-
-.card p {
-    color: #999;
-    font-size: 0.9rem;
-}
-
-.center-text {
-    color: #b3b3b3;
-}
-
-/* Lyrics & Footer */
-.lyrics-block pre {
-    background-color: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 6px;
-    border: 1px solid #333;
-    color: #ccc;
-    font-family: monospace;
-    overflow-x: auto;
-}
-
+/* Footer */
 footer {
     text-align: center;
-    padding: 3rem 2rem;
-    background-color: #0d0d0d;
-    color: #777;
-    font-size: 0.85rem;
-    border-top: 1px solid #222;
-}
-
-/* Photo Browser / Carousel */
-.photo-browser {
-    background-color: #161616;
-    padding: 2rem 0;
-    overflow: hidden;
-    border-bottom: 1px solid #333;
-    border-top: 1px solid #333;
-}
-
-.slider-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-}
-
-.slide-track {
-    display: flex;
-    width: calc(300px * 6);
-    animation: scroll 30s linear infinite;
-    gap: 1.5rem;
-}
-
-.slide {
-    width: 300px;
-    flex-shrink: 0;
-}
-
-.slide img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #333;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-300px * 3 - 1.5rem * 3));
-    }
+    padding: 2rem;
+    color: #666666;
+    font-size: 0.9rem;
+    background-color: #0b0b0b;
 }

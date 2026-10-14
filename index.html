@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnetize & Co.</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts for a clean, modern look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Header / Navigation -->
     <header class="site-header">
-        <div class="nav-container">
-            <a href="#" class="logo">MAGNETIZE & CO.</a>
+        <div class="nav-container center-nav">
             <nav class="nav-links">
                 <a href="#music">Music</a>
                 <a href="#shows">Shows</a>
@@ -36,19 +31,18 @@
         </div>
     </section>
 
-    <!-- Photo Browser Section -->
+    <!-- Photo Carousel Section -->
     <section class="photo-browser">
-        <div class="slider-container">
-            <div class="slide-track">
-                <!-- Drop your image file names inside the images folder -->
-                <div class="slide"><img src="images/photo1.jpg" alt="Magnetize live performance"></div>
-                <div class="slide"><img src="images/photo2.jpg" alt="Studio session"></div>
-                <div class="slide"><img src="images/photo3.jpg" alt="Band photo"></div>
-                <!-- Duplicate slides if you want a seamless infinite scroll loop -->
-                <div class="slide"><img src="images/photo1.jpg" alt="Magnetize live performance"></div>
-                <div class="slide"><img src="images/photo2.jpg" alt="Studio session"></div>
-                <div class="slide"><img src="images/photo3.jpg" alt="Band photo"></div>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide current-slide"><img src="images/photo1.jpg" alt="Magnetize live performance"></div>
+                    <div class="carousel-slide"><img src="images/photo2.jpg" alt="Studio session"></div>
+                    <div class="carousel-slide"><img src="images/photo3.jpg" alt="Band photo"></div>
+                </div>
             </div>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </section>
 
@@ -56,26 +50,15 @@
     <section id="music" class="section">
         <div class="container">
             <h2>Music</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="images/rwywm-cover.jpg" alt="Right Where You Want Me EP Cover">
-                    <h3>Right Where You Want Me (EP)</h3>
-                    <p>Released February 2018</p>
-                </div>
-                <div class="card">
-                    <img src="images/over-this-house-cover.jpg" alt="Over This House EP Cover">
-                    <h3>Over This House (EP)</h3>
-                    <p>Released September 2020</p>
-                </div>
-            </div>
+            <p>Listen to our latest releases and stream across platforms.</p>
         </div>
     </section>
 
     <!-- Shows Section -->
-    <section id="shows" class="section alt-bg">
+    <section id="shows" class="section">
         <div class="container">
             <h2>Shows</h2>
-            <p class="center-text">No upcoming shows right now. Check back soon or request a show!</p>
+            <p>Check out upcoming live performances and tour dates.</p>
         </div>
     </section>
 
@@ -83,18 +66,15 @@
     <section id="videos" class="section">
         <div class="container">
             <h2>Videos</h2>
-            <p class="center-text">Embedded music video links will go here.</p>
+            <p>Watch official music videos and live sessions.</p>
         </div>
     </section>
 
     <!-- Bio Section -->
-    <section id="bio" class="section alt-bg">
+    <section id="bio" class="section">
         <div class="container">
-            <h2>My Story</h2>
-            <div class="bio-text">
-                <p>Magnetize started out rapping in the late 1990s before transitioning to alternative rock in the early 2000s. He moved from Ohio to Indiana in 2020, meeting his current bandmates not long after...</p>
-                <!-- Paste your full bio text here -->
-            </div>
+            <h2>Bio</h2>
+            <p>Learn more about Magnetize & Co.</p>
         </div>
     </section>
 
@@ -102,35 +82,33 @@
     <section id="lyrics" class="section">
         <div class="container">
             <h2>Lyrics</h2>
-            <div class="lyrics-block">
-                <h3>Over This House</h3>
-                <pre>
-Over this house / Over this house
-There's a violent stir in the skies
-There's a silence storm of weary cries
-...
-                </pre>
-            </div>
+            <p>Explore lyrics from upcoming and past releases.</p>
         </div>
     </section>
 
     <!-- News Section -->
-    <section id="news" class="section alt-bg">
+    <section id="news" class="section">
         <div class="container">
             <h2>News</h2>
-            <div class="news-item">
-                <h3>Working on Lifelines (2027)</h3>
-                <p>Magnetize is working on a new 11-song album, slated to release in 2027.</p>
-            </div>
+            <p>Stay up to date with the latest announcements.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Magnetize Music. All rights reserved.</p>
-        </div>
+        <p>&copy; 2027 Magnetize Music. All rights reserved.</p>
     </footer>
+
+    <!-- Carousel Script -->
+    <script>
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
 
 </body>
 </html>
