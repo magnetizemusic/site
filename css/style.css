@@ -142,44 +142,6 @@ body {
     color: #ffffff;
 }
 
-/* Hero Section */
-.hero {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg') no-repeat center center/cover;
-    padding: 0 1rem;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-}
-
-.hero-content p {
-    font-size: 1.15rem;
-    color: #aaaaaa;
-    margin-bottom: 1.5rem;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #0f0f0f;
-    padding: 0.75rem 1.75rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.2s;
-}
-
-.btn:hover {
-    background-color: #cccccc;
-}
-
 /* Photo Carousel */
 .photo-browser {
     background-color: #000000;
