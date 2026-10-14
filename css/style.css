@@ -125,10 +125,12 @@ body {
 }
 
 .carousel-slide img {
+    max-width: 600px;
     width: 100%;
-    max-height: 520px;
+    max-height: 420px;
     object-fit: contain;
     display: block;
+    margin: 0 auto;
     background-color: #111;
 }
 
