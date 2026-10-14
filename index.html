@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetize & Co.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
     <!-- Header / Navigation -->
     <header class="site-header">
         <div class="header-inner">
@@ -42,3 +52,100 @@
             <a href="#10x12" onclick="toggleMenu()">10X12</a>
         </div>
     </div>
+
+    <!-- Hero / Welcome Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MAGNETIZE & CO.</h1>
+            <p>New album <em>Lifelines</em> coming in 2027.</p>
+            <a href="#music" class="btn">Explore Music</a>
+        </div>
+    </section>
+
+    <!-- Photo Carousel Section -->
+    <section class="photo-browser">
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide current-slide"><img src="images/photo1.jpg" alt="Magnetize live performance"></div>
+                    <div class="carousel-slide"><img src="images/photo2.jpg" alt="Studio session"></div>
+                    <div class="carousel-slide"><img src="images/photo3.jpg" alt="Band photo"></div>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <div class="container">
+            <h2>Music</h2>
+            <p>Listen to our latest releases and stream across platforms.</p>
+        </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section id="shows" class="section">
+        <div class="container">
+            <h2>Shows</h2>
+            <p>Check out upcoming live performances and tour dates.</p>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="section">
+        <div class="container">
+            <h2>Videos</h2>
+            <p>Watch official music videos and live sessions.</p>
+        </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section id="bio" class="section">
+        <div class="container">
+            <h2>Bio</h2>
+            <p>Learn more about Magnetize & Co.</p>
+        </div>
+    </section>
+
+    <!-- Lyrics Section -->
+    <section id="lyrics" class="section">
+        <div class="container">
+            <h2>Lyrics</h2>
+            <p>Explore lyrics from upcoming and past releases.</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2>News</h2>
+            <p>Stay up to date with the latest announcements.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027 Magnetize Music. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+        }
+
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+
+</body>
+</html>
+
