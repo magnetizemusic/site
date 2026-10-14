@@ -170,3 +170,48 @@ footer {
     font-size: 0.85rem;
     border-top: 1px solid #222;
 }
+
+/* Photo Browser / Carousel */
+.photo-browser {
+    background-color: #161616;
+    padding: 2rem 0;
+    overflow: hidden;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+}
+
+.slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(300px * 6);
+    animation: scroll 30s linear infinite;
+    gap: 1.5rem;
+}
+
+.slide {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #333;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 3 - 1.5rem * 3));
+    }
+}
