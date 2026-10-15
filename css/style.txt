@@ -36,7 +36,16 @@ body {
     font-size: 1.5rem;
     letter-spacing: 4px;
     font-weight: 400;
+}
+
+.site-logo a {
     color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.site-logo a:hover {
+    opacity: 0.8;
 }
 
 /* Hidden by default on desktop */
