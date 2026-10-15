@@ -370,61 +370,20 @@
         }
 
         /* Lyrics Section Styling */
-        .lyrics-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .lyric-tab-btn {
-            background-color: #161616;
-            color: #cccccc;
-            border: 1px solid #222;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            font-weight: 500;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .lyric-tab-btn:hover {
-            background-color: #222;
-            color: #ffffff;
-            border-color: #444;
-        }
-
-        .lyric-tab-btn.active {
-            background-color: #ffffff;
-            color: #0f0f0f;
-            border-color: #ffffff;
-            font-weight: 600;
-        }
-
-        .lyrics-display-box {
+        .lyrics-coming-soon {
             background-color: #161616;
             border: 1px solid #222;
             border-radius: 6px;
-            padding: 2rem;
-            max-height: 450px;
-            overflow-y: auto;
-            display: none;
-        }
-
-        .lyrics-display-box.active {
-            display: block;
-        }
-
-        .lyrics-text {
-            color: #cccccc;
-            font-size: 1rem;
-            line-height: 1.8;
-            font-style: italic;
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 2rem 0;
-            letter-spacing: 1px;
+        }
+
+        .lyrics-coming-soon p {
+            color: #cccccc;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
         }
 
         /* Bio Specific Styling */
@@ -770,35 +729,9 @@
     <section id="lyrics" class="section">
         <div class="container">
             <h2>Lyrics</h2>
-            
-            <!-- Album Tabs -->
-            <div class="lyrics-tabs">
-                <button class="lyric-tab-btn active" onclick="openAlbumLyrics(event, 'album-over-this-house')">OVER THIS HOUSE</button>
-                <button class="lyric-tab-btn" onclick="openAlbumLyrics(event, 'album-right-where-you-want-me')">RIGHT WHERE YOU WANT ME</button>
-                <button class="lyric-tab-btn" onclick="openAlbumLyrics(event, 'album-snapshots')">SNAPSHOTS OF THE SHATTERED SOUL</button>
-                <button class="lyric-tab-btn" onclick="openAlbumLyrics(event, 'album-backstage-pass')">BACKSTAGE PASS</button>
+            <div class="lyrics-coming-soon">
+                <p>Lyrics coming soon</p>
             </div>
-
-            <!-- Over This House Lyrics Box -->
-            <div id="album-over-this-house" class="lyrics-display-box active">
-                <div class="lyrics-text">Lyrics coming soon</div>
-            </div>
-
-            <!-- Right Where You Want Me Lyrics Box -->
-            <div id="album-right-where-you-want-me" class="lyrics-display-box">
-                <div class="lyrics-text">Lyrics coming soon</div>
-            </div>
-
-            <!-- Snapshots of the Shattered Soul Lyrics Box -->
-            <div id="album-snapshots" class="lyrics-display-box">
-                <div class="lyrics-text">Lyrics coming soon</div>
-            </div>
-
-            <!-- Backstage Pass Lyrics Box -->
-            <div id="album-backstage-pass" class="lyrics-display-box">
-                <div class="lyrics-text">Lyrics coming soon</div>
-            </div>
-
         </div>
     </section>
 
@@ -812,6 +745,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Bottom Social Media Icons Bar -->
+    <div class="social-bar" style="padding: 2.5rem 0 1rem 0; background-color: #0b0b0b;">
+        <a href="https://www.facebook.com/magnetizecomusic" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@magnetizecomusic" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/magnetizecomusic" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/magnetizemusic" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-twitter"></i></a>
+        <a href="https://music.apple.com/us/artist/magnetize-co/6790047704" target="_blank" rel="noopener noreferrer" aria-label="Apple Music"><i class="fab fa-itunes-note"></i></a>
+        <a href="https://linktr.ee/magnetizemusic" target="_blank" rel="noopener noreferrer" aria-label="Linktree"><i class="fas fa-link"></i></a>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -848,21 +791,6 @@
                 btnText.innerText = "Read Full Bio";
                 btnIcon.className = "fas fa-chevron-down";
             }
-        }
-
-        function openAlbumLyrics(evt, albumId) {
-            const boxes = document.getElementsByClassName('lyrics-display-box');
-            for (let i = 0; i < boxes.length; i++) {
-                boxes[i].classList.remove('active');
-            }
-
-            const buttons = document.getElementsByClassName('lyric-tab-btn');
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-
-            document.getElementById(albumId).classList.add('active');
-            evt.currentTarget.classList.add('active');
         }
     </script>
 
