@@ -167,12 +167,12 @@
         /* Photo Carousel */
         .photo-browser {
             background-color: #000000;
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             border-bottom: 1px solid #222;
         }
 
         .carousel-container {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
             position: relative;
             display: flex;
@@ -202,7 +202,7 @@
 
         .carousel-slide img {
             width: 100%;
-            max-height: 500px;
+            max-height: 350px;
             object-fit: contain;
             display: block;
             background-color: #000;
@@ -213,9 +213,9 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffffff;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             cursor: pointer;
-            padding: 0.75rem 0.5rem;
+            padding: 0.5rem 0.4rem;
             z-index: 10;
             position: absolute;
             top: 50%;
@@ -229,11 +229,11 @@
         }
 
         .prev-btn {
-            left: 20px;
+            left: 10px;
         }
 
         .next-btn {
-            right: 20px;
+            right: 10px;
         }
 
         /* Social Media Icons Bar */
@@ -242,13 +242,13 @@
             justify-content: center;
             align-items: center;
             gap: 2.5rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             text-align: center;
         }
 
         .social-bar a {
             color: #ffffff !important;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             text-decoration: none;
             transition: color 0.2s, transform 0.2s;
         }
@@ -265,13 +265,88 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .section h2 {
             font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Music Grid Styling */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .album-card {
+            background-color: #161616;
+            border: 1px solid #222;
+            border-radius: 6px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .album-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .album-art {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
             margin-bottom: 1rem;
+            background-color: #222;
+        }
+
+        .album-title {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+        }
+
+        .album-year {
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        /* Bio Specific Styling */
+        .bio-content p {
+            margin-bottom: 1.25rem;
+            color: #cccccc;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .bio-content h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* News Specific Styling */
+        .news-content p {
+            margin-bottom: 1rem;
+            color: #cccccc;
+            font-size: 1.05rem;
+        }
+
+        .news-content a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .news-content a:hover {
+            color: #aaaaaa;
         }
 
         /* Footer */
@@ -302,7 +377,7 @@
             }
 
             .social-bar a {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -375,7 +450,32 @@
     <section id="music" class="section">
         <div class="container">
             <h2>Music</h2>
-            <p>Listen to our latest releases and stream across platforms.</p>
+            <div class="album-grid">
+                <!-- Album 1 -->
+                <div class="album-card">
+                    <img src="images/album1.png" alt="Over This House artwork" class="album-art">
+                    <div class="album-title">Over This House</div>
+                    <div class="album-year">2020</div>
+                </div>
+                <!-- Album 2 -->
+                <div class="album-card">
+                    <img src="images/album2.png" alt="Right Where You Want Me artwork" class="album-art">
+                    <div class="album-title">Right Where You Want Me</div>
+                    <div class="album-year">2018</div>
+                </div>
+                <!-- Album 3 -->
+                <div class="album-card">
+                    <img src="images/album3.png" alt="Snapshots of the Shattered Soul artwork" class="album-art">
+                    <div class="album-title">Snapshots of the Shattered Soul</div>
+                    <div class="album-year">2011</div>
+                </div>
+                <!-- Album 4 -->
+                <div class="album-card">
+                    <img src="images/album4.png" alt="Backstage Pass artwork" class="album-art">
+                    <div class="album-title">Backstage Pass</div>
+                    <div class="album-year">2004</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -399,7 +499,26 @@
     <section id="bio" class="section">
         <div class="container">
             <h2>Bio</h2>
-            <p>Learn more about Magnetize & Co.</p>
+            <div class="bio-content">
+                <p>Magnetize started out rapping in the late 1990s before transitioning to alternative rock in the early 2000s. He moved from Ohio to Indiana in 2020, meeting his current bandmates not long after. Marc writes, “In 2022, I picked up the electric guitar after playing acoustic guitar and piano for years. I had no intention of assembling a band when I moved to Fort Wayne. However, the process of discovering electric guitar and building a pedalboard ultimately led me to seek out a band. We couldn’t decide on a name, so we just added the ‘& Co.’ to keep us distinct from several other artists named Magnetize.”</p>
+                
+                <h3>Discography</h3>
+                <p>Between 1991 and 1998, Marc released several Christian rap projects under the name Marc Andre (including the campus favorite "My Alma Mater," a track dedicated to Liberty University). In 2001, he released his first alternative album, <em>Dishes</em>. Then in 2004, he released his sophomore project, <em>Backstage Pass</em>, and launched 10x12 Productions—a production company specializing in custom music and audio design for film, television, and games. After a long hiatus, he released his third alternative record, <em>Snapshots of the Shattered Soul</em> in 2011.</p>
+                
+                <p>In the winter of 2012, Marc released music videos for "Portrait of Me" and "Shadows & Sunlight," and in December of that year, he self-published his first book, <em>Snapshots of the Shattered Soul: The Stories Behind the Songs</em>. Between 2014 and 2017, Marc released multiple singles—"Joshua," "This Christmastime," and "Fingerprints."</p>
+                
+                <p>On February 14, 2018, Marc resurfaced with his first EP, <em>Right Where You Want Me</em>. Marc writes, “I learned a lot of life lessons during the production of <em>Right Where You Want Me</em>. If anything, it was a season of rebalancing. I was shifting careers and juggling new responsibilities as a husband and father. What began as a full-length album was dialed back to a five-song EP due to budget restraints. Though frustrating at the time, I was able to refocus my energy on writing new and better songs. I also harvested some vital lessons in time management and discovered new ways of streamlining my writing and production process.”</p>
+                
+                <p>In 2019, Marc released a lyric video for "A Step Away" and officially changed his stage name from Marc Andre to Magnetize.</p>
+                
+                <p>On August 27, 2020, he previewed his upcoming <em>Over This House</em> EP with a lyric video for "Glimmer." The EP debuted on September 25, 2020 and a music video for the title track was released on November 20, 2020.</p>
+                
+                <p>In early 2021, Marc performed a new song, "Forever Yours," at Sweetwater Studios in Fort Wayne, Indiana.</p>
+                
+                <p>In September 2026, Marc began promoting his projects under the name “Magnetize & Co.” He is currently in the studio working on “Lifelines,” a new 11-song album, which is slated for release in the summer of 2027. He also hopes to release 2 additional singles in early 2027.</p>
+                
+                <p>Marc believes every person has a story worth telling and hopes his own journey inspires others to share theirs. He writes, “Growing up, music shaped my perception of the world and carried me through some of the darkest valleys. In the end, I pray my music rekindles lost purpose, gives speech to those without a voice, and remind others of God’s promises and unconditional love.”</p>
+            </div>
         </div>
     </section>
 
@@ -415,7 +534,10 @@
     <section id="news" class="section">
         <div class="container">
             <h2>News</h2>
-            <p>Stay up to date with the latest announcements.</p>
+            <div class="news-content">
+                <p>Magnetize is working on a new album, slated to release in 2027.</p>
+                <p>In the meantime, check out the latest <a href="#shows">shows</a>.</p>
+            </div>
         </div>
     </section>
 
