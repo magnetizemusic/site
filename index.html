@@ -352,6 +352,15 @@
             border: 0;
         }
 
+        /* Shows / Bandsintown Styling */
+        .shows-container {
+            margin-top: 1.5rem;
+            background-color: #161616;
+            border: 1px solid #222;
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
         /* Bio Specific Styling */
         .bio-content p {
             margin-bottom: 1.25rem;
@@ -554,7 +563,22 @@
     <section id="shows" class="section">
         <div class="container">
             <h2>Shows</h2>
-            <p>Check out upcoming live performances and tour dates.</p>
+            <div class="shows-container">
+                <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
+                <a class="bit-widget-initializer" 
+                   data-artist-name="Magnetize & Co." 
+                   data-background-color="transparent" 
+                   data-text-color="#FFFFFF" 
+                   data-link-color="#FFFFFF" 
+                   data-popup-background-color="#161616" 
+                   data-popup-text-color="#FFFFFF" 
+                   data-popup-link-color="#FFFFFF" 
+                   data-auto-style="false" 
+                   data-language="en" 
+                   data-display-limit="15" 
+                   data-link-text-color="#FFFFFF">
+                </a>
+            </div>
         </div>
     </section>
 
