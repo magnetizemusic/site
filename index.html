@@ -367,6 +367,75 @@
             overflow-y: auto;
         }
 
+        /* Lyrics Section Styling */
+        .lyrics-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lyric-tab-btn {
+            background-color: #161616;
+            color: #cccccc;
+            border: 1px solid #222;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lyric-tab-btn:hover {
+            background-color: #222;
+            color: #ffffff;
+            border-color: #444;
+        }
+
+        .lyric-tab-btn.active {
+            background-color: #ffffff;
+            color: #0f0f0f;
+            border-color: #ffffff;
+            font-weight: 600;
+        }
+
+        .lyrics-display-box {
+            background-color: #161616;
+            border: 1px solid #222;
+            border-radius: 6px;
+            padding: 2rem;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .lyrics-display-box.active {
+            display: block;
+        }
+
+        .lyric-song-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .lyric-song-title:first-child {
+            margin-top: 0;
+        }
+
+        .lyrics-display-box p {
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            white-space: pre-line;
+            margin-bottom: 1.5rem;
+        }
+
         /* Bio Specific Styling */
         .bio-content p {
             margin-bottom: 1.25rem;
@@ -710,7 +779,77 @@
     <section id="lyrics" class="section">
         <div class="container">
             <h2>Lyrics</h2>
-            <p>Explore lyrics from upcoming and past releases.</p>
+            
+            <!-- Album Tabs -->
+            <div class="lyrics-tabs">
+                <button class="lyric-tab-btn active" onclick="openAlbumLyrics(event, 'album-over-this-house')">OVER THIS HOUSE</button>
+                <button class="lyric-tab-btn" onclick="openAlbumLyrics(event, 'album-right-where-you-want-me')">RIGHT WHERE YOU WANT ME</button>
+                <button class="lyric-tab-btn" onclick="openAlbumLyrics(event, 'album-snapshots')">SNAPSHOTS OF THE SHATTERED SOUL</button>
+                <button class="lyric-tab-btn" onclick="openAlbumLyrics(event, 'album-backstage-pass')">BACKSTAGE PASS</button>
+            </div>
+
+            <!-- Over This House Lyrics Box -->
+            <div id="album-over-this-house" class="lyrics-display-box active">
+                <div class="lyric-song-title">Glimmer</div>
+                <p>Don't let them take your heart
+                That love inside of you
+                Gotta find a way to dance
+                It's all a point of view
+                When your clouds are overwhelming
+                Know the sun is shining...</p>
+
+                <div class="lyric-song-title">Over This House</div>
+                <p>Shadows fall across the floor
+                Wondering what tomorrow's looking for
+                We build our walls and lock each door
+                Hoping peace will enter once more...</p>
+            </div>
+
+            <!-- Right Where You Want Me Lyrics Box -->
+            <div id="album-right-where-you-want-me" class="lyrics-display-box">
+                <div class="lyric-song-title">A Step Away</div>
+                <p>Standing on the edge of what I know
+                Trying to find the strength to let it go
+                Every single question in my mind
+                Left behind...</p>
+
+                <div class="lyric-song-title">Right Where You Want Me</div>
+                <p>So often I find myself frustrated
+                With life's circumstances and limitations
+                There's never enough time or money
+                Relationships aren't where I want them to be...</p>
+            </div>
+
+            <!-- Snapshots of the Shattered Soul Lyrics Box -->
+            <div id="album-snapshots" class="lyrics-display-box">
+                <div class="lyric-song-title">Portrait of Me</div>
+                <p>Looking in the mirror at the lines and scars
+                Counting up the pieces of broken jars
+                You take the fragments and make them whole
+                Healing the depths of a shattered soul...</p>
+
+                <div class="lyric-song-title">Shadows & Sunlight</div>
+                <p>Walking through the valley where the shadows grow
+                Looking for a light that's hard to know
+                You meet me in the middle of the dark
+                And warm up my cold heart...</p>
+            </div>
+
+            <!-- Backstage Pass Lyrics Box -->
+            <div id="album-backstage-pass" class="lyrics-display-box">
+                <div class="lyric-song-title">Backstage Pass</div>
+                <p>Waiting in the wings before the show begins
+                Looking at the path of where it all sets in
+                You gave me clearance to walk right through
+                To a front-row view of you...</p>
+
+                <div class="lyric-song-title">Out of the Shadows</div>
+                <p>No more hiding behind the heavy curtain
+                Leaving behind everything uncertain
+                Stepping into the light today
+                Ready to find my way...</p>
+            </div>
+
         </div>
     </section>
 
@@ -760,6 +899,21 @@
                 btnText.innerText = "Read Full Bio";
                 btnIcon.className = "fas fa-chevron-down";
             }
+        }
+
+        function openAlbumLyrics(evt, albumId) {
+            const boxes = document.getElementsByClassName('lyrics-display-box');
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].classList.remove('active');
+            }
+
+            const buttons = document.getElementsByClassName('lyric-tab-btn');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+
+            document.getElementById(albumId).classList.add('active');
+            evt.currentTarget.classList.add('active');
         }
     </script>
 
