@@ -22,7 +22,8 @@
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
+    <style>
+        /* Header & Logo Styles */
         .site-header {
             background-color: #0f0f0f;
             border-bottom: 1px solid #222;
@@ -45,8 +46,10 @@
         .site-logo {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
+            /* Centers logo between hamburger and text */
+            justify-content: center; 
+            width: 100%;
+            position: relative;
         }
 
         .site-logo a {
@@ -59,6 +62,7 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
+            margin: auto; /* Balances the container centering */
         }
 
         .site-logo a:hover {
@@ -70,7 +74,10 @@
             width: auto;
             mix-blend-mode: screen;
             vertical-align: middle;
+            margin-left: 12px; /* Nudges logo right */
         }
+    </style>
+
 
         /* Hidden by default on desktop */
         .hamburger-btn {
