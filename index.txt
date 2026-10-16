@@ -38,7 +38,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            max-width: 1400px; /* Widened to match desktop layout */
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -51,9 +51,7 @@
         .site-logo a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 1.5rem;
-            letter-spacing: 4px;
-            font-weight: 400;
+            display: inline-block;
             transition: opacity 0.2s;
         }
 
@@ -85,7 +83,7 @@
         /* Desktop Nav Links */
         .desktop-nav {
             margin-top: 1rem;
-            max-width: 1400px; /* Widened to match desktop layout */
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
             display: flex;
@@ -96,7 +94,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2.5rem; /* Increased gap to spread buttons wider */
+            gap: 2.5rem;
         }
 
         .nav-links a {
@@ -172,7 +170,7 @@
         }
 
         .carousel-container {
-            max-width: 1200px; /* Expanded from 700px so photos stretch wider */
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
             display: flex;
@@ -202,7 +200,7 @@
 
         .carousel-slide img {
             width: 100%;
-            max-height: 550px; /* Increased height capacity for larger display */
+            max-height: 550px;
             object-fit: contain;
             display: block;
             background-color: #000;
@@ -501,7 +499,11 @@
                 <span></span>
                 <span></span>
             </button>
-            <div class="site-logo"><a href="#">MAGNETIZE & CO.</a></div>
+            <div class="site-logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="Magnetize & Co." style="max-height: 45px; width: auto; vertical-align: middle;">
+                </a>
+            </div>
         </div>
         
         <!-- Desktop Nav -->
