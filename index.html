@@ -22,8 +22,7 @@
             line-height: 1.6;
         }
 
-    <style>
-        /* Header & Logo Styles */
+        /* Header & Navigation */
         .site-header {
             background-color: #0f0f0f;
             border-bottom: 1px solid #222;
@@ -37,7 +36,7 @@
         .header-inner {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             position: relative;
             max-width: 1400px;
             margin: 0 auto;
@@ -46,9 +45,8 @@
         .site-logo {
             display: flex;
             align-items: center;
-            /* Centers logo between hamburger and text */
-            justify-content: center; 
-            width: 100%;
+            justify-content: center;
+            flex-grow: 1;
             position: relative;
         }
 
@@ -62,7 +60,6 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            margin: auto; /* Balances the container centering */
         }
 
         .site-logo a:hover {
@@ -74,23 +71,19 @@
             width: auto;
             mix-blend-mode: screen;
             vertical-align: middle;
-            margin-left: 12px; /* Nudges logo right */
         }
-    </style>
 
-
-        /* Hidden by default on desktop */
+        /* Hamburger button for mobile */
         .hamburger-btn {
-            display: none;
             background: none;
             border: none;
             cursor: pointer;
+            display: flex;
             flex-direction: column;
             justify-content: space-between;
             width: 28px;
             height: 20px;
-            position: absolute;
-            left: 0;
+            z-index: 101;
         }
 
         .hamburger-btn span {
@@ -496,11 +489,13 @@
             }
 
             .site-logo a {
-                font-size: 1.5rem;
+                font-size: 1.35rem;
+                letter-spacing: 2px;
+                gap: 8px;
             }
 
             .site-logo img {
-                height: 28px;
+                height: 32px;
             }
 
             .social-bar {
@@ -529,10 +524,11 @@
             </button>
             <div class="site-logo">
                 <a href="#">
-                    <img src="images/mag-logo.png" alt="">
+                    <img src="images/logo.png" alt="">
                     MAGNETIZE & CO.
                 </a>
             </div>
+            <div style="width: 28px;"></div> <!-- Spacer to balance header flex layout on mobile -->
         </div>
         
         <!-- Desktop Nav -->
@@ -775,7 +771,7 @@
         <div class="container">
             <h2>News</h2>
             <div class="news-content">
-                <p>Magnetize is working on his new album, <i>Lifelines</i>, slated to release in 2027.</p>
+                <p>Magnetize is working on a new album, slated to release in 2027.</p>
                 <p>In the meantime, check out the latest <a href="#shows">shows</a>.</p>
             </div>
         </div>
