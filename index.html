@@ -42,28 +42,34 @@
             margin: 0 auto;
         }
 
-                       .site-logo a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 3rem; /* Increased to 3rem */
-            letter-spacing: 6px;
-            font-weight: 400;
-            transition: opacity 0.2s;
+        .site-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
-
-
 
         .site-logo a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 2.2rem;
             letter-spacing: 4px;
             font-weight: 400;
             transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .site-logo a:hover {
             opacity: 0.8;
+        }
+
+        .site-logo img {
+            height: 42px;
+            width: auto;
+            mix-blend-mode: screen;
+            vertical-align: middle;
         }
 
         /* Hidden by default on desktop */
@@ -364,7 +370,7 @@
             border: 0;
         }
 
-        /* Shows / Bandsintown Styling - Clean White Background Container */
+        /* Shows / Bandsintown Styling */
         .shows-container {
             margin-top: 1.5rem;
             background-color: #ffffff;
@@ -393,7 +399,7 @@
 
         /* Bio Specific Styling */
         #bio {
-            background-color: #161616; /* Medium-light grey background to break up the look */
+            background-color: #161616;
         }
 
         .bio-content p {
@@ -482,6 +488,14 @@
                 display: flex;
             }
 
+            .site-logo a {
+                font-size: 1.5rem;
+            }
+
+            .site-logo img {
+                height: 28px;
+            }
+
             .social-bar {
                 gap: 1.75rem;
             }
@@ -506,7 +520,12 @@
                 <span></span>
                 <span></span>
             </button>
-            <div class="site-logo"><a href="#">MAGNETIZE & CO.</a></div>
+            <div class="site-logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="">
+                    MAGNETIZE & CO.
+                </a>
+            </div>
         </div>
         
         <!-- Desktop Nav -->
