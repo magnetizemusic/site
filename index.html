@@ -38,7 +38,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            max-width: 1200px;
+            max-width: 1400px; /* Widened to match desktop layout */
             margin: 0 auto;
         }
 
@@ -85,7 +85,7 @@
         /* Desktop Nav Links */
         .desktop-nav {
             margin-top: 1rem;
-            max-width: 1200px;
+            max-width: 1400px; /* Widened to match desktop layout */
             margin-left: auto;
             margin-right: auto;
             display: flex;
@@ -96,14 +96,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.75rem;
+            gap: 2.5rem; /* Increased gap to spread buttons wider */
         }
 
         .nav-links a {
             color: #cccccc;
             text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
             font-weight: 500;
             transition: color 0.2s;
             white-space: nowrap;
@@ -167,17 +167,17 @@
         /* Photo Carousel */
         .photo-browser {
             background-color: #000000;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             border-bottom: 1px solid #222;
         }
 
         .carousel-container {
-            max-width: 700px;
+            max-width: 1200px; /* Expanded from 700px so photos stretch wider */
             margin: 0 auto;
             position: relative;
             display: flex;
             align-items: center;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
 
         .carousel-track-wrapper {
@@ -202,7 +202,7 @@
 
         .carousel-slide img {
             width: 100%;
-            max-height: 350px;
+            max-height: 550px; /* Increased height capacity for larger display */
             object-fit: contain;
             display: block;
             background-color: #000;
@@ -213,9 +213,9 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffffff;
             border: none;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            padding: 0.5rem 0.4rem;
+            padding: 0.8rem 0.6rem;
             z-index: 10;
             position: absolute;
             top: 50%;
@@ -229,11 +229,11 @@
         }
 
         .prev-btn {
-            left: 10px;
+            left: 15px;
         }
 
         .next-btn {
-            right: 10px;
+            right: 15px;
         }
 
         /* Social Media Icons Bar */
