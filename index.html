@@ -376,14 +376,34 @@
             border-radius: 6px;
             padding: 3rem 2rem;
             text-align: center;
+            display: block;
+            text-decoration: none;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .lyrics-coming-soon:hover {
+            transform: translateY(-4px);
+            border-color: #444;
         }
 
         .lyrics-coming-soon p {
-            color: #cccccc;
+            color: #ffffff;
             font-size: 1.1rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .lyrics-subtext {
+            color: #888888;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .lyrics-subtext i {
+            margin-left: 0.3rem;
+            font-size: 0.8rem;
         }
 
         /* Bio Specific Styling */
@@ -534,7 +554,7 @@
                 <a href="#shows">SHOWS</a>
                 <a href="#videos">VIDEOS</a>
                 <a href="#bio">BIO</a>
-                <a href="#lyrics">LYRICS</a>
+                <a href="https://genius.com/artists/Magnetize-and-co" target="_blank" rel="noopener noreferrer">LYRICS</a>
                 <a href="#news">NEWS</a>
             </nav>
         </div>
@@ -548,7 +568,7 @@
             <a href="#shows" onclick="toggleMenu()">SHOWS</a>
             <a href="#videos" onclick="toggleMenu()">VIDEOS</a>
             <a href="#bio" onclick="toggleMenu()">BIO</a>
-            <a href="#lyrics" onclick="toggleMenu()">LYRICS</a>
+            <a href="https://genius.com/artists/Magnetize-and-co" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">LYRICS</a>
             <a href="#news" onclick="toggleMenu()">NEWS</a>
         </div>
     </div>
@@ -769,6 +789,17 @@
         </div>
     </section>
 
+    <!-- Lyrics Section -->
+    <section id="lyrics" class="section">
+        <div class="container">
+            <h2>Lyrics</h2>
+            <a href="https://genius.com/artists/Magnetize-and-co" target="_blank" rel="noopener noreferrer" class="lyrics-coming-soon">
+                <p>Lyrics Coming Soon</p>
+                <span class="lyrics-subtext">Visit our Genius Artist Page <i class="fas fa-external-link-alt"></i></span>
+            </a>
+        </div>
+    </section>
+
     <!-- Bottom Social Media Icons Bar -->
     <div class="social-bar" style="padding: 2.5rem 0 1rem 0; background-color: #0b0b0b;">
         <a href="https://www.facebook.com/magnetizecomusic" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -792,7 +823,7 @@
         }
 
         let currentIndex = 0;
-        const totalSlides = 4; // Updated to 4 photos
+        const totalSlides = 4;
 
         function moveSlide(direction) {
             currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
