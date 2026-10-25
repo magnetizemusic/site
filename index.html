@@ -36,54 +36,43 @@
         .header-inner {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             position: relative;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .site-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            position: relative;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            font-weight: 400;
         }
 
         .site-logo a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             letter-spacing: 4px;
             font-weight: 400;
             transition: opacity 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .site-logo a:hover {
             opacity: 0.8;
         }
 
-        .site-logo img {
-            height: 42px;
-            width: auto;
-            mix-blend-mode: screen;
-            vertical-align: middle;
-        }
-
-        /* Hamburger button for mobile */
+        /* Hidden by default on desktop */
         .hamburger-btn {
+            display: none;
             background: none;
             border: none;
             cursor: pointer;
-            display: flex;
             flex-direction: column;
             justify-content: space-between;
             width: 28px;
             height: 20px;
-            z-index: 101;
+            position: absolute;
+            left: 0;
         }
 
         .hamburger-btn span {
@@ -96,7 +85,7 @@
         /* Desktop Nav Links */
         .desktop-nav {
             margin-top: 1rem;
-            max-width: 1400px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
             display: flex;
@@ -107,14 +96,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 1.75rem;
         }
 
         .nav-links a {
             color: #cccccc;
             text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
             font-weight: 500;
             transition: color 0.2s;
             white-space: nowrap;
@@ -178,17 +167,17 @@
         /* Photo Carousel */
         .photo-browser {
             background-color: #000000;
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             border-bottom: 1px solid #222;
         }
 
         .carousel-container {
-            max-width: 1200px;
+            max-width: 700px;
             margin: 0 auto;
             position: relative;
             display: flex;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         .carousel-track-wrapper {
@@ -213,7 +202,7 @@
 
         .carousel-slide img {
             width: 100%;
-            max-height: 550px;
+            max-height: 350px;
             object-fit: contain;
             display: block;
             background-color: #000;
@@ -224,9 +213,9 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffffff;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             cursor: pointer;
-            padding: 0.8rem 0.6rem;
+            padding: 0.5rem 0.4rem;
             z-index: 10;
             position: absolute;
             top: 50%;
@@ -240,11 +229,11 @@
         }
 
         .prev-btn {
-            left: 15px;
+            left: 10px;
         }
 
         .next-btn {
-            right: 15px;
+            right: 10px;
         }
 
         /* Social Media Icons Bar */
@@ -273,7 +262,6 @@
         .section {
             padding: 5rem 2rem;
             border-bottom: 1px solid #222;
-            scroll-margin-top: 120px; /* Accounts for sticky header height */
         }
 
         .container {
@@ -371,7 +359,7 @@
             border: 0;
         }
 
-        /* Shows / Bandsintown Styling */
+        /* Shows / Bandsintown Styling - Clean White Background Container */
         .shows-container {
             margin-top: 1.5rem;
             background-color: #ffffff;
@@ -381,11 +369,24 @@
             overflow-y: auto;
         }
 
-        /* Bio Specific Styling */
-        #bio {
+        /* Lyrics Section Styling */
+        .lyrics-coming-soon {
             background-color: #161616;
+            border: 1px solid #222;
+            border-radius: 6px;
+            padding: 3rem 2rem;
+            text-align: center;
         }
 
+        .lyrics-coming-soon p {
+            color: #cccccc;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Bio Specific Styling */
         .bio-content p {
             margin-bottom: 1.25rem;
             color: #cccccc;
@@ -397,12 +398,12 @@
             font-size: 1.3rem;
             color: #ffffff;
             margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.05rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* Read More / Story Dropdown Styles */
+        /* Read More Dropdown Styles */
         .read-more-btn {
             background-color: transparent;
             color: #ffffff;
@@ -425,23 +426,24 @@
             border-color: #666;
         }
 
-        .bio-more-content, .story-more-content {
+        .bio-more-content {
             display: none;
         }
 
-        .bio-more-content.expanded, .story-more-content.expanded {
+        .bio-more-content.expanded {
             display: block;
         }
 
-        .story-photo {
+        /* Paint Wall Divider Strip */
+        .paint-wall-divider {
             width: 100%;
-            max-height: 500px;
-            object-fit: contain;
-            background-color: #000;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-            border: 1px solid #222;
-            display: block;
+            height: 160px;
+            background-image: url('images/paint-wall.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
         }
 
         /* News Specific Styling */
@@ -483,16 +485,6 @@
                 display: flex;
             }
 
-            .site-logo a {
-                font-size: 1.35rem;
-                letter-spacing: 2px;
-                gap: 8px;
-            }
-
-            .site-logo img {
-                height: 32px;
-            }
-
             .social-bar {
                 gap: 1.75rem;
             }
@@ -503,6 +495,10 @@
 
             .video-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .paint-wall-divider {
+                height: 120px;
             }
         }
     </style>
@@ -517,13 +513,7 @@
                 <span></span>
                 <span></span>
             </button>
-            <div class="site-logo">
-                <a href="#">
-                    <img src="images/logo.png" alt="">
-                    MAGNETIZE & CO.
-                </a>
-            </div>
-            <div style="width: 28px;"></div> <!-- Spacer to balance header flex layout on mobile -->
+            <div class="site-logo"><a href="#">MAGNETIZE & CO.</a></div>
         </div>
         
         <!-- Desktop Nav -->
@@ -533,7 +523,7 @@
                 <a href="#shows">SHOWS</a>
                 <a href="#videos">VIDEOS</a>
                 <a href="#bio">BIO</a>
-                <a href="https://genius.com/artists/Magnetize-and-co" target="_blank" rel="noopener noreferrer">LYRICS</a>
+                <a href="#lyrics">LYRICS</a>
                 <a href="#news">NEWS</a>
             </nav>
         </div>
@@ -547,7 +537,7 @@
             <a href="#shows" onclick="toggleMenu()">SHOWS</a>
             <a href="#videos" onclick="toggleMenu()">VIDEOS</a>
             <a href="#bio" onclick="toggleMenu()">BIO</a>
-            <a href="https://genius.com/artists/Magnetize-and-co" target="_blank" rel="noopener noreferrer">LYRICS</a>
+            <a href="#lyrics" onclick="toggleMenu()">LYRICS</a>
             <a href="#news" onclick="toggleMenu()">NEWS</a>
         </div>
     </div>
@@ -725,14 +715,9 @@
             <div class="bio-content">
                 <p>Magnetize started out rapping in the late 1990s before transitioning to alternative rock in the early 2000s. He moved from Ohio to Indiana in 2020, meeting his current bandmates not long after. Marc writes, “In 2022, I picked up the electric guitar after playing acoustic guitar and piano for years. I had no intention of assembling a band when I moved to Fort Wayne. However, the process of discovering electric guitar and building a pedalboard ultimately led me to seek out a band. We couldn’t decide on a name, so we just added the ‘& Co.’ to keep us distinct from several other artists named Magnetize.”</p>
                 
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <button id="readMoreBtn" class="read-more-btn" onclick="toggleBio()">
-                        <span id="btnText">Read Full Bio</span> <i id="btnIcon" class="fas fa-chevron-down"></i>
-                    </button>
-                    <button id="storyBtn" class="read-more-btn" onclick="toggleStory()">
-                        <span id="storyBtnText">Marc’s Story</span> <i id="storyBtnIcon" class="fas fa-chevron-down"></i>
-                    </button>
-                </div>
+                <button id="readMoreBtn" class="read-more-btn" onclick="toggleBio()">
+                    <span id="btnText">Read Full Bio</span> <i id="btnIcon" class="fas fa-chevron-down"></i>
+                </button>
 
                 <div id="bioMoreContent" class="bio-more-content">
                     <h3>Discography</h3>
@@ -752,52 +737,19 @@
                     
                     <p>Marc believes every person has a story worth telling and hopes his own journey inspires others to share theirs. He writes, “Growing up, music shaped my perception of the world and carried me through some of the darkest valleys. In the end, I pray my music rekindles lost purpose, gives speech to those without a voice, and remind others of God’s promises and unconditional love.”</p>
                 </div>
-
-                <div id="storyMoreContent" class="story-more-content">
-                    <p style="margin-top: 1.5rem;">I grew up as an MK. My parents were missionaries in France between 1963-1980. I was born in Ohio during a furlough in 1975. Our family traveled back to France in 1977 and then suddenly returned to the U.S. when I was four and a half. It is still a mystery why we came back to the States. It has been said that my sister was getting into trouble and was hanging out with rough boys with motorcycles. My sister was pulled out of French school less than a month before the school year ended and we left our apartment in Chalon overnight. I still recall the emotion of leaving my brother and father as my mother, sister and I rode down the gravel driveway of the Chateau de St. Albain in a grey Citroen. My mother, sister and I flew back to the United States while my dad and brother remained in an unknown location in France for 2-3 months.</p>
-
-                    <p>I have numerous memories from France, most of which are frightening. I remember two darkly dressed men taking my dad away in the middle of the night. When I was four years old, I contemplated jumping out of the fourth-story window in our Chalon apartment as my father yelled at my sister as she sat petrified in a tall French chair. I remember cowering with my mother and sister in an upstairs bedroom as a stranger approached our front door step. When I was three or four, someone forced me to do something inappropriate with a young girl. I also watched as other children did inappropriate things. I remember a skeleton in the attic of the Chateau de St. Albain, a ministry center managed by Grace Brethren Missions. Even to this day, my parents have no explanation for my disturbing memories (except for the skeleton which was apparently a dead French priest). When I was in elementary school, I told my parents that I hated myself and even considered running away from home. In fourth grade, my parents took me to a counselor because I kicked a hole in the wall outside of my bedroom. Apparently after that meeting, my anger subsided. However, I still wrestled with self-esteem issues.</p>
-
-                    <img src="images/marc-and-joel-tractor.webp" alt="Marc and Joel on tractor" class="story-photo">
-
-                    <p>I was a kid who knew and followed the rules. Don’t talk to strangers. Don’t play with fire. Don’t watch violent cartoons (especially He-Man, The Hulk or Voltron). Don’t drink carbonated beverages and don’t eat sugary cereals. As I got older, I was taught what Christians should and shouldn’t do. Good Christians don’t swear, drink, smoke or chew tobacco. Good Christians don’t tell dirty jokes. Good Christians go to church every Sunday and tithe 10% or more if conscience prompts (but never less). Good Christians read their Bibles every day... for at least ten minutes. Good Christians should keep a safe distance from people with different world views, except in the case of witnessing. Good Christians should never gossip, yet are free to share information about others for the purpose of prayer. Good Christians believe that the rapture will happen before the tribulation. Good Christians practice foot washing and tri-immersion baptism. Good Christians sing hymns and only speak in tongues with an interpreter present. The list went on and on.</p>
-
-                    <p>Growing up, the prospect of being a good Christian was at times overwhelming. Regardless, I did my best to color within these lines, and did a pretty good job...for the most part. I went to a Christian school K-12, went to Bible college and a Christian university. I was well practiced in evangelical demeanor. However, I was blind to the fact that I had developed a skewed version of Christianity, rooted in legalism. I looked down on friends who drank alcohol. I questioned the legitimacy of Christians who attended R-rated movies. I developed a filter through which I analyzed other people, separating the good Christians from the bad, all the while underplaying the sin in my own life and ignoring the pride in my own heart.</p>
-
-                    <p>I’m not sure at what point I became a legalist. Apparently, when I was five years old, I prayed with my mom and asked Jesus to come into my life. From a young age, I understood that I was a sinner in need of a savior. However, this simple belief evolved into a complex system of dos and don’ts. I knew I was saved and was confident that I was going to heaven. I trusted in God’s grace and His free gift of eternal life through Jesus. However, over time, a competing ideology emerged which challenged and clouded the idea of God’s all encompassing grace. I began to believe that God was tracking my disobedience and was grading me accordingly. In my mind, God’s favor was directly related to my performance. His love for me was as transient as the stock market, climbing and crashing with each moral victory or defeat. Only time and distance from any given sin could rebuild my confidence in God’s love. I saw God as a harsh father who held my mistakes over me. I knew I was forgiven, but I couldn’t shake the feeling that God was disappointed with me. Where did these impressions originate?</p>
-
-                    <img src="images/marc-breakfast.webp" alt="Marc at breakfast" class="story-photo">
-
-                    <p>Growing up, I felt like an only child. I only have a few memories of my siblings throughout my grade school years. My sister, Beth, left for Wheaton College in 1982 when I was seven years old and my brother, Joel, followed three years later. During his final years of high school, my brother built electronics for me. One of the most memorable devices was a shocker which I took to elementary school. I would dare friends to touch the two foil pads which released a generous jolt of electricity (I recall one time when a group of friends and I held hands while we stood in a circle of current). I remember swimming as my brother and sister played cards at an outdoor pool at the Sheraton in Columbus, OH. I remember digging through my brother and sister’s Petra, Amy Grant and U2 cassettes. After Beth left for Wheaton, I remember watching her run and often win races in Chicago. I recall flying alone to Wheaton College to visit Joel. I remember shooting him with a Nerf gun while he was praying during dinner at the Wheaton boy’s cross country house (Boy, was he surprised to see his little brother). There were times when I wished I had a sibling closer to my age. I remember riding in the car with my parents while I contemplated the prospect of creating an imaginary friend. Like most children, I had stuffed animals. I considered them friends. One of these animals was a small grey mouse which I affectionately referred to as “Squeaky.” This mouse would ultimately become the inspiration for “Mouse in the House,” my second rap cassette released in 1994, when I was a senior in high school. Behind this popular song loved by students at Worthington Christian High School was a dysfunctional seventeen year old looking for love, purpose and acceptance.</p>
-
-                    <p>For years, I wondered why I was the way I was. I was exceptionally confident in some areas and extremely insecure in others. I could rap in front of thousands of people, but retreated into a shell of shyness in a small room of classmates. There was the “stage me” and the “real me” and many people were baffled by these opposing personalities. Even I had trouble understanding this flux of confidence and insecurity. The persona of “musician” had become a shield to hide behind, a place where I could safely share my deepest thoughts without being judged... a place where eccentric was seen as artistic... where awkward was interpreted as enlightened. However, behind this mask was a child still longing for affirmation.</p>
-
-                    <p>Somehow, I struggled to resolve my search for perfection with the concept of unconditional love. I felt so screwed up inside and wondered how anyone, especially God, could fully accept me when I couldn’t accept myself. I drowned my pain in music and dulled my mind with things that were destructive. All this time, God was patiently waiting for me to surrender my insecurities to Him. Amazingly, God never gave up on me. He relentlessly pursued my confused and wandering heart. He brought friends into my life who accepted me, despite my many flaws. I began to see God’s fingerprints in my life - His protection physically and emotionally - His blessings regardless of my rebellion - His gentle voice reassuring me that nothing could separate me from His love. I had always heard that God loved me, yet deep down inside I wondered how God could accept me when I felt inadequate, subpar and inferior. I developed this idea that God was against me. I assumed God was the originator of every unfavorable circumstance. I believed God was on a constant mission to complicate my life and cripple my dreams. I viewed challenges as opportunities to fail, instead of opportunities to grow. I saw obstacles as dead ends instead of hurdles to climb over. I saw failures as permanent marks on my record instead of valuable scars to keep me humble.</p>
-
-                    <img src="images/marc-driving-boat.webp" alt="Marc driving boat" class="story-photo">
-
-                    <p>My feelings were accentuated as I watched my father struggle with his identity. He was an amazing artist who beat himself up for not being like other men. I’d often hear him say, “If I was only more practical...so many guys know how to fix cars or do home repairs...” or “I wish I was more organized... this is an area where I really struggle...” I always sensed that he was reaching for something which was unattainable. My heart was burdened for my dad. He was a perfectionist, painting a world he wished he could be a part of. For years, I wondered about the relationship between my father and his father. My dad said little about his own father except for the same short phrase, “He was hard on us.”</p>
-
-                    <p>My dad and I were similar in so many ways, yet there was always something inside of me which longed to find freedom from the cage of self-doubt which had been modeled for me. However, I didn’t know where to start. My heart was confused. I saw so many contradictions both at home and in the church. I wanted to find hope, forgiveness and a connection with God, but I realized this couldn’t happen until I abandoned the world of legalism which I was raised in. I stopped trying to measure up. I learned to love and forgive. I began to see myself and others as sinners... not in desperate need of a make-over, but in desperate need of a Savior.</p>
-
-                    <img src="images/marc-in-studio.webp" alt="Marc in studio" class="story-photo">
-
-                    <p>It wasn’t until my twenties that I realized I had a twisted view of God. I understood that God was a God of love, but I also believed that He was a God of justice who hated sin (both are indeed true). I was acutely aware of my own sin and spent much time under a cloud of guilt, praying for forgiveness, but doubting God’s promise to remove my transgressions as far as the east is from the west (Psalm 103).</p>
-
-                    <p>Like most children, my perception of God was shaped by my parents, particularly my father. I grew up idolizing my dad. He was a former missionary, a talented artist and a man of God. However, as an adult child, I began to see the flaws in my dad. I realized that he was a struggling human being, just like me. He didn’t have it all figured out, he couldn’t understand everything I was going through and he couldn’t fix the deep scars inside my heart. I stopped holding expectations over my dad and began praying that God would heal his wounds and set him free. It was at that point that I began to see God, the perfect Father, in a different light. It was then that I started to trust God with the doubts and insecurities which had crippled me in my relationship with others and ultimately, with Him. I stopped worrying about what others thought of me (or what I thought they thought of me) and I began seeing myself as a child of God, completely loved and accepted.</p>
-
-                    <p style="font-style: italic; margin-top: 1.5rem;">“For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.” Romans 8:38-39</p>
-                </div>
             </div>
         </div>
     </section>
+
+    <!-- Paint Wall Divider Strip -->
+    <div class="paint-wall-divider"></div>
 
     <!-- News Section -->
     <section id="news" class="section">
         <div class="container">
             <h2>News</h2>
             <div class="news-content">
-                <p>Magnetize is working on his new album, Lifelines, slated to release in 2027.</p>
+                <p>Magnetize is working on a new album, slated to release in 2027.</p>
                 <p>In the meantime, check out the latest <a href="#shows">shows</a>.</p>
             </div>
         </div>
@@ -815,7 +767,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2027 10x12 Productions. All rights reserved.</p>
+        <p>&copy; 2027 Magnetize Music. All rights reserved.</p>
     </footer>
 
     <!-- Scripts -->
@@ -846,22 +798,6 @@
                 btnIcon.className = "fas fa-chevron-up";
             } else {
                 btnText.innerText = "Read Full Bio";
-                btnIcon.className = "fas fa-chevron-down";
-            }
-        }
-
-        function toggleStory() {
-            const moreContent = document.getElementById('storyMoreContent');
-            const btnText = document.getElementById('storyBtnText');
-            const btnIcon = document.getElementById('storyBtnIcon');
-
-            moreContent.classList.toggle('expanded');
-
-            if (moreContent.classList.contains('expanded')) {
-                btnText.innerText = "Hide Story";
-                btnIcon.className = "fas fa-chevron-up";
-            } else {
-                btnText.innerText = "Marc’s Story";
                 btnIcon.className = "fas fa-chevron-down";
             }
         }
